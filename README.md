@@ -1,6 +1,7 @@
 # Password Generator
 
 ## Deployed URL
+https://gabetuason.github.io/password_generator/
 
 ## Description
 An application that an employee can use to generate a random password based on criteria selected. The random password generated can include special, numeric, uppercase and lowecase characters.
