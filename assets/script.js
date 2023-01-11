@@ -109,6 +109,7 @@ function generatePassword() {
     var userPassword = userPassword + passwordGen[Math.floor(Math.random() * passwordGen.length)];
     console.log(userPassword);
   }
+  alert("Password has been generated and will be displayed in page");
   return userPassword;
 }
 
