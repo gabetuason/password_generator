@@ -42,6 +42,8 @@ var passwordLength;
 
 // call Function activates when button is clicked for writePassword()
 function generatePassword() {
+  //empty array for the password characters to be displayed. Variable resets as soon as the function is called again.
+  var passwordGen = [];
   passwordLength = prompt("How many characters do you want your password to have? Length has to be between 8 to 128 characters.");
   console.log(passwordLength);
 
@@ -81,8 +83,6 @@ function generatePassword() {
     console.log(withSpecial)
 
   }
-  //empty array for the password characters to be displayed. Variable resets as soon as the function is called again.
-  var passwordGen = [];
 
   if (withLowerCase) {
     passwordGen = passwordGen.concat(lowerCase);
