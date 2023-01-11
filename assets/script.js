@@ -1,8 +1,8 @@
 // password generator 
 
 // 1. Prompt user for length when button is clicked.
-//    a) (Prompt) "Amount of characters for password to include. Length has to be 8 - 128 characters". (loop if condition not satisfied)
-// 2. Prompt the user on what character type to add.
+//    a) (Prompt) Amount of characters for password to include. Length 8 - 128 charac (loop if condition not satisfied)
+// 2. Prompt on what character type to add.
 //    b) (Prompt) "Do you want your password to contain lowercase letters?"
 //    c) (Prompt) "Do you want your password to contain uppercase letters?"
 //    d) (Prompt) "Do you want your password to contain numeric characters?"
@@ -10,7 +10,7 @@
 // Input should be validated and at least one character type should be selected (loop if none is selected)
 
 // 3. With the arrays defined, concatenate the declare the variables.  
-// 4. Password is then generated randomly and written in the page.
+// 4. Password is then generated randomly and written in the page box.
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -32,16 +32,15 @@ var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"
 var numeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "_", "`", "{", "|", "}", "~", "]"];
 
-// Declaring variables
+// variables
 var withLowerCase;
 var withUpperCase;
 var withNumeric;
 var withSpecial;
 
 var passwordLength;
-var passwordGen = [];
 
-// Function activates when button is clicked for writePassword()
+// call Function activates when button is clicked for writePassword()
 function generatePassword() {
   passwordLength = prompt("How many characters do you want your password to have? Length has to be between 8 to 128 characters.");
   console.log(passwordLength);
@@ -49,7 +48,7 @@ function generatePassword() {
   // While loop until it satisfies the condition which is length of Password has to be between 8 - 128.
   while (!(passwordLength >= 8 && passwordLength <= 128)) {
     if (passwordLength === null) {
-      return;
+      return userPassword = "";
     }
     alert("Please make sure the password length is between 8 to 128 characters. Please retype the number!");
 
@@ -65,7 +64,7 @@ function generatePassword() {
 
   withSpecial = confirm("Do you want your password to contain special characters?");
 
-  // while loop until it satisfies the condition which is atleast one criteria is needed. ok for yes and cancel for false
+  // while loop until it satisfies the condition: one criteria is needed. ok for yes and cancel for false
   while (withLowerCase !== true && withUpperCase !== true && withNumeric !== true && withSpecial !== true) {
     alert("Needs atleast one character criteria type");
 
@@ -82,6 +81,8 @@ function generatePassword() {
     console.log(withSpecial)
 
   }
+  //empty array for the password characters to be displayed. Variable resets as soon as the function is called again.
+  var passwordGen = [];
 
   if (withLowerCase) {
     passwordGen = passwordGen.concat(lowerCase);
@@ -110,3 +111,5 @@ function generatePassword() {
   }
   return userPassword;
 }
+
+
