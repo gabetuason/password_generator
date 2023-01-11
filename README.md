@@ -38,4 +38,4 @@ It's done when the password is generated
 THEN the password is either displayed in an alert or written to the page
 
 ## Screenshot
-
+![Alt text](https://github.com/gabetuason/password_generator/blob/main/screenshot.PNG)
